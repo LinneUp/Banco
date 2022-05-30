@@ -15,7 +15,7 @@ public class Menu {
 
     Scanner scanner = new Scanner(System.in);
         System.out.println("Banco");
-    int option;
+        int option;
         do{
         System.out.println("Digite a Opção desejada: ");
         System.out.println(" 1 - Criar conta ");
@@ -42,13 +42,37 @@ public class Menu {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o Nome: ");
                 String titular= scanner.next();
-                System.out.println("Digite o Numero da Conta: ");
-                int tipoconta = scanner.nextInt();
-                Conta conta1 = new Conta(titular, opcao, tipoconta, saques);
 
+                System.out.println("Digite o Numero da Conta: ");
+                String tipoconta = scanner.next();
+
+                int saques = 0;
+                Conta conta1 = new Conta(titular, option, tipoconta, saques) {
+                    @Override
+                    public double getValorImpostoSaque() {
+                        return 0;
+                    }
+
+                    @Override
+                    public boolean sacar(double quantia) {
+                        return false;
+                    }
+
+                    @Override
+                    public double getSaldo() {
+                        return 0;
+                    }
+
+                };
 
             }
             case 2:{
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Digite o numero da Conta: ");
+                int numero = scanner.nextInt();
+                conta1 = contas.get(numero -1);
+
+
             }
             case 3:{
             }

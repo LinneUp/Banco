@@ -9,14 +9,14 @@ public abstract class Conta implements Tributavel {
     static int qtdcontas = 0;
 
 
-    public Conta(String titular, String opcao, String tipoconta, int saques) {
+    public Conta(String titular, int opcao, String tipoconta, int saques) {
 
         this.titular = titular;
         qtdcontas++;
         this.numero=qtdcontas;
         this.saldo = 0;
         this.saques = saques;
-        this.tipoconta= tipoconta;
+        this.tipoconta = tipoconta;
     }
 
 
