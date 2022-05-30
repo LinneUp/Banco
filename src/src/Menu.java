@@ -44,7 +44,7 @@ public class Menu {
                 String titular= scanner.next();
                 System.out.println("Digite o Numero da Conta: ");
                 int tipoconta = scanner.nextInt();
-                conta1 = new Conta(titular,opcao,tipoconta,saques);
+                Conta conta1 = new Conta(titular, opcao, tipoconta, saques);
 
 
             }
