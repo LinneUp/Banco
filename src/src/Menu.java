@@ -41,9 +41,10 @@ public class Menu {
             case 1:{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o Nome: ");
-                int titular= scanner.nextInt();
+                String titular= scanner.next();
                 System.out.println("Digite o Numero da Conta: ");
                 int tipoconta = scanner.nextInt();
+                conta1 = new Conta(titular,opcao,tipoconta,saques);
 
 
             }
