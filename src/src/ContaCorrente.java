@@ -5,7 +5,7 @@ public class ContaCorrente extends Conta{
     private double limiteSaque;
 
 
-    public ContaCorrente(String titular, String opcao, String tipoconta, int saques, double chequeEspecial, double limiteSaque) {
+    public ContaCorrente(String titular, int opcao, String tipoconta, int saques, double chequeEspecial, double limiteSaque) {
         super(titular, opcao, tipoconta, saques);
         this.chequeEspecial = chequeEspecial;
         this.limiteSaque = limiteSaque;

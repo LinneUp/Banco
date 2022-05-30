@@ -64,17 +64,28 @@ public class Menu {
                     }
 
                 };
+                Conta contas.add(conta1);
 
             }
             case 2:{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o numero da Conta: ");
                 int numero = scanner.nextInt();
-                conta1 = contas.get(numero -1);
+                Conta conta1 = contas.get(numero);
 
 
             }
             case 3:{
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Digite o Numero da conta: ");
+                int numero = scanner.nextInt();
+                Conta conta1 = contas.get(numero);
+
+                System.out.println("Digite o valor para deposito");
+                double valor = scanner.nextDouble();
+                Conta contas.Depositar(valor);
+
+
             }
             case 4:{
 
