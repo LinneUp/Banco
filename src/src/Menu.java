@@ -62,14 +62,14 @@ public class Menu {
                     }
 
                 };
-//                contas.add(conta1);
+//                contas.add(conta1); Referece ao arquivo Listas
 
             }
             case 2:{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o numero da Conta: ");
                 int numero = scanner.nextInt();
-//                Conta conta1 = contas.get(numero);
+//                Conta conta1 = contas.get(numero); Referece ao arquivo Listas
 
 
             }
@@ -77,11 +77,11 @@ public class Menu {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o Numero da conta: ");
                 int numero = scanner.nextInt();
-//                Conta conta1 = contas(numero);
+//                Conta conta1 = contas(numero); Referece ao arquivo Listas
 
                 System.out.println("Digite o valor para deposito");
                 double valor = scanner.nextDouble();
-//                Conta contas.conta1.Depositar(valor);
+//                Conta contas.conta1.Depositar(valor); Referece ao arquivo Listas
 
 
             }
