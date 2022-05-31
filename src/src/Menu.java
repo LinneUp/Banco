@@ -10,8 +10,6 @@ public class Menu {
         String tipoconta;
         int opcao, numero, numero2, saques = 0;
         double valor;
-        ArrayList<Conta> contas = new ArrayList<>();
-        Conta conta1,conta2;
 
     Scanner scanner = new Scanner(System.in);
         System.out.println("Banco");
@@ -64,14 +62,14 @@ public class Menu {
                     }
 
                 };
-                Conta contas.add(conta1);
+//                contas.add(conta1);
 
             }
             case 2:{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o numero da Conta: ");
                 int numero = scanner.nextInt();
-                Conta conta1 = contas.get(numero);
+//                Conta conta1 = contas.get(numero);
 
 
             }
@@ -79,11 +77,11 @@ public class Menu {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o Numero da conta: ");
                 int numero = scanner.nextInt();
-                Conta conta1 = contas.get(numero);
+//                Conta conta1 = contas(numero);
 
                 System.out.println("Digite o valor para deposito");
                 double valor = scanner.nextDouble();
-                Conta contas.Depositar(valor);
+//                Conta contas.conta1.Depositar(valor);
 
 
             }
