@@ -1,9 +1,23 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
+    private List<Conta> contas = new ArrayList<>();
+
+    public List<Conta> getContas() {
+        return contas;
+    }
+    public void addNovaConta(Conta novaConta) {
+        contas.add(novaConta);
+    }
+
+    public Menu(List<Conta> contas) {
+        this.contas = contas;
+    }
+
     public static void main(String[] args) throws Exception{
         Scanner in = new Scanner(System.in);
         String titular;
@@ -35,6 +49,7 @@ public class Menu {
         public static void process(int option) {
 
 
+
         switch (option) {
             case 1:{
                 Scanner scanner = new Scanner(System.in);
@@ -62,37 +77,50 @@ public class Menu {
                     }
 
                 };
-//                contas.add(conta1); Referece ao arquivo Listas
+                Conta conta1add;
 
             }
             case 2:{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o numero da Conta: ");
                 int numero = scanner.nextInt();
-//                Conta conta1 = contas.get(numero); Referece ao arquivo Listas
-
 
             }
             case 3:{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o Numero da conta: ");
                 int numero = scanner.nextInt();
-//                Conta conta1 = contas(numero); Referece ao arquivo Listas
+
 
                 System.out.println("Digite o valor para deposito");
                 double valor = scanner.nextDouble();
-//                Conta contas.conta1.Depositar(valor); Referece ao arquivo Listas
-
 
             }
             case 4:{
+                Scanner scanner = new Scanner(System.in);
+
+                System.out.print(" Digite o número da conta: ");
+                int numero = scanner.nextInt();
+
+                System.out.println(" Digite o valor para Saque :");
+                double valor = scanner.nextDouble();
+
 
             }
             case 5:{
+                Scanner scanner = new Scanner(System.in);
+
+                System.out.print(" Digite o número da conta de origem: ");
+                int numero = scanner.nextInt();
+                System.out.print(" Digite o número da conta de destino: ");
+                int numero2 = scanner.nextInt();
+                System.out.println(" DIGITE O VALOR DA TRANSFERÊNCIA: ");
+                double valor = scanner.nextDouble();
+
 
             }
             case 6:{
-
+                System.out.println(" - Saldo Total de Contas :");
             }
 
         }
