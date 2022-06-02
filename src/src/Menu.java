@@ -4,25 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Menu {
-    private List<Conta> contas = new ArrayList<>();
 
-    public List<Conta> getContas() {
-        return contas;
-    }
-    public void addNovaConta(Conta novaConta) {
-        contas.add(novaConta);
+public class Menu extends Conta {
+    static Dados dados = new Dados();
+
+
+
+    public Menu(String titular, int opcao, String tipoconta, int saques) {
+        super(titular, opcao, tipoconta, saques);
     }
 
-    public Menu(List<Conta> contas) {
-        this.contas = contas;
-    }
+
 
     public static void main(String[] args) throws Exception{
         Scanner in = new Scanner(System.in);
         String titular;
         String tipoconta;
-        int opcao, numero, numero2, saques = 0;
+        int opcao, saques = 0;
         double valor;
 
     Scanner scanner = new Scanner(System.in);
@@ -40,7 +38,7 @@ public class Menu {
 
         System.out.println(" Selecione a opção desejada: ");
         option = scanner.nextInt();
-            in.nextLine();
+
 
 
             process(option);
@@ -52,48 +50,39 @@ public class Menu {
 
         switch (option) {
             case 1:{
+
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o Nome: ");
                 String titular= scanner.next();
+                dados.setTitular(titular);
+
 
                 System.out.println("Digite o Numero da Conta: ");
                 String tipoconta = scanner.next();
-
+                dados.setTipoconta(tipoconta);
                 int saques = 0;
-                Conta conta1 = new Conta(titular, option, tipoconta, saques) {
-                    @Override
-                    public double getValorImpostoSaque() {
-                        return 0;
-                    }
 
-                    @Override
-                    public boolean sacar(double quantia) {
-                        return false;
-                    }
-
-                    @Override
-                    public double getSaldo() {
-                        return 0;
-                    }
-
-                };
-                Conta conta1add;
-
+                break;
             }
             case 2:{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o numero da Conta: ");
                 int numero = scanner.nextInt();
+                dados.setNumero(numero);
 
             }
             case 3:{
                 Scanner scanner = new Scanner(System.in);
                 System.out.println("Digite o Numero da conta: ");
                 int numero = scanner.nextInt();
+                dados.setNumero(numero);
+
 
 
                 System.out.println("Digite o valor para deposito");
                 double valor = scanner.nextDouble();
+                dados.setpValor(valor);
+
 
             }
             case 4:{
@@ -101,9 +90,11 @@ public class Menu {
 
                 System.out.print(" Digite o número da conta: ");
                 int numero = scanner.nextInt();
+                dados.setNumero(numero);
 
                 System.out.println(" Digite o valor para Saque :");
                 double valor = scanner.nextDouble();
+                dados.setpValor(valor);
 
 
             }
@@ -116,13 +107,29 @@ public class Menu {
                 int numero2 = scanner.nextInt();
                 System.out.println(" DIGITE O VALOR DA TRANSFERÊNCIA: ");
                 double valor = scanner.nextDouble();
+                dados.setpValor(valor);
 
 
             }
             case 6:{
-                System.out.println(" - Saldo Total de Contas :");
+                System.out.println(" - Saldo Total de Contas :" + dados.getpValor() + Conta.getQtdcontas() );
             }
 
         }
+    }
+
+    @Override
+    public boolean sacar(double quantia) {
+        return false;
+    }
+
+    @Override
+    public double getSaldo() {
+        return 0;
+    }
+
+    @Override
+    public double getValorImpostoSaque() {
+        return 0;
     }
 }

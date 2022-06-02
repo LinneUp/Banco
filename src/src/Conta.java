@@ -3,7 +3,7 @@ public abstract class Conta implements Tributavel {
     public int numero;
     protected String titular;
     private String banco;
-    protected String tipoconta;
+    private String tipoconta;
     public double saldo;
     public int saques;
     static int qtdcontas = 0;
@@ -18,6 +18,8 @@ public abstract class Conta implements Tributavel {
         this.saques = saques;
         this.tipoconta = tipoconta;
     }
+
+
 
 
     public void DadosBancarios() {
@@ -103,28 +105,28 @@ public abstract class Conta implements Tributavel {
                 '}';
     }
 
-    public int getSacar() {
-        return saques;
+    public int getNumero() {
+        return numero;
     }
 
-    public void setSacar(int sacar) {
-        this.saques = saques;
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
-    public double getSaldo(int i) {
-        return saldo;
-    }
-
-    public static int getQtdcontas() {
-        return qtdcontas;
+    public String getTitular() {
+        return titular;
     }
 
     public void setTitular(String titular) {
         this.titular = titular;
     }
 
-    public String getTitular() {
-        return titular;
+    public String getBanco() {
+        return banco;
+    }
+
+    public void setBanco(String banco) {
+        this.banco = banco;
     }
 
     public String getTipoconta() {
@@ -135,7 +137,29 @@ public abstract class Conta implements Tributavel {
         this.tipoconta = tipoconta;
     }
 
-    public abstract boolean sacar(double quantia);
+    public double getSaldo() {
+        return saldo;
+    }
 
-    public abstract double getSaldo();
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getSaques() {
+        return saques;
+    }
+
+    public void setSaques(int saques) {
+        this.saques = saques;
+    }
+
+    public static int getQtdcontas() {
+        return qtdcontas;
+    }
+
+    public static void setQtdcontas(int qtdcontas) {
+        Conta.qtdcontas = qtdcontas;
+    }
+
+    public abstract boolean sacar(double quantia);
 }

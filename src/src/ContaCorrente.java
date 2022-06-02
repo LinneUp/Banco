@@ -22,10 +22,10 @@ public class ContaCorrente extends Conta{
 
     @Override
     public String toString() {
+
         return "ContaCorrente{" +
                 "numero=" + numero +
                 ", titular='" + titular + '\'' +
-                ", tipoconta='" + tipoconta + '\'' +
                 ", saldo=" + saldo +
                 ", chequeEspecial=" + chequeEspecial +
                 ", limiteSaque=" + limiteSaque +
